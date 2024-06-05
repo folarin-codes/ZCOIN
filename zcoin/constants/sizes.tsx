@@ -30,6 +30,11 @@ const FontStyles = {
         color: COLORS.tertiaryText,
         fontSize:10,
         fontFamily:'std'
+    },
+    small:{
+        fontSize:10,
+        color:'white',
+        lineHeight: 12.65
     }
 
 }

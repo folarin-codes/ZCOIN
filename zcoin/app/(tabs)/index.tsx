@@ -40,7 +40,6 @@ const Home = ()=>{
 
   const {data, isSuccess, isLoading} = useQuery({queryKey: ['data'], queryFn :getCoins})
 
-  console.log('call data ',data, isSuccess , isLoading);
 
 
   return(
