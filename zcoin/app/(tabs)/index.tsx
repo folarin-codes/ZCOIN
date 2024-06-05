@@ -65,7 +65,7 @@ const Home = ()=>{
           <View style={{marginBottom:20, backgroundColor:COLORS.white, padding:20, borderRadius:8}}>
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
               <View style={{flexDirection:'row'}}>
-              <Image source={data.item.iconUrl} resizeMode="contain" height={40} width={40}/>
+              <Image source={{uri:data.item.iconUrl}} resizeMode="contain" height={40} width={40}/>
               <View style={{marginLeft:10}}>
                 {/* <Text>{data.item.iconUrl} </Text> */}
                 <Text style={{...FontStyles.primaryText, marginBottom:5}}>{data.item.name}</Text>
