@@ -44,7 +44,7 @@ const Home = ()=>{
 
   return(
     <SafeAreaView style={styles.container}>
-      <View style={{backgroundColor:COLORS.primary, paddingVertical:20, borderRadius:8, marginVertical:20, paddingLeft:20}}>
+      <View style={{backgroundColor:COLORS.primary, paddingVertical:20, borderRadius:12, marginVertical:20, paddingLeft:20}}>
         <Text style={{fontFamily:'std', fontSize:12, color:COLORS.white, marginBottom:10}}>Welcome, Micheal!</Text>
         <Text style={{...FontStyles.heading, color:COLORS.white, fontSize:18}}>Make your first investment today</Text>
         <TouchableOpacity style={{backgroundColor:COLORS.white, borderRadius:8, width:120, padding:10, marginTop:20}}>

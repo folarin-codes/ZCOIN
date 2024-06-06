@@ -85,7 +85,7 @@ const Portfolio = ()=>{
             data={coin_data}
             renderItem={(data)=>{
                 return(
-                    <View style={{marginBottom:20, backgroundColor:COLORS.white, padding:20, borderRadius:8}}>
+                    <View style={{marginBottom:20, backgroundColor:COLORS.white, padding:20, borderRadius:12}}>
                         <View style={{flexDirection:'row', justifyContent:'space-between'}}>
                             <View style={{flexDirection:'row'}}>
                                 <Image source={data.item.image} resizeMode="contain"/>
@@ -104,12 +104,11 @@ const Portfolio = ()=>{
                             </View>
                 
 
+                         </View>
+
                     </View>
 
-          </View>
-
-                )
-            }}
+                )}}
             
             />
            </View>
