@@ -1,4 +1,4 @@
-import { TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
 import FontStyles from "@/constants/sizes";
 
 type buttonProp = { 
@@ -25,5 +25,7 @@ const Button = (prop:buttonProp)=>{
 
     )
 };
+
+
 
 export default Button;

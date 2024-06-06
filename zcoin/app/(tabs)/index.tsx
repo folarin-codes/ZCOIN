@@ -1,5 +1,5 @@
 import { SafeAreaView } from "react-native-safe-area-context"
-import {Text, View, ScrollView,TouchableOpacity, FlatList, Image} from 'react-native'
+import {Text, View, ScrollView,TouchableOpacity, FlatList, Image, StyleSheet} from 'react-native'
 import styles from "../style";
 import FontStyles from "@/constants/sizes";
 import { COLORS } from "@/constants/Colors";
@@ -96,5 +96,7 @@ const Home = ()=>{
     </SafeAreaView>
   )
 }
+
+
 
 export default Home;

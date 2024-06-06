@@ -59,12 +59,12 @@ const Portfolio = ()=>{
                 <View style={{marginTop:20, flexDirection:'row', justifyContent:'flex-start'}}>
                     <View style={{marginRight:15}}>
                         <Text style={{...FontStyles.small, color:COLORS.white}}>Invested value</Text>
-                        <Text style={{...FontStyles.secondaryText, color:COLORS.white}}>NGN5,000.78</Text>
+                        <Text style={{...FontStyles.secondaryText, color:COLORS.white}}>NGN500,000.78</Text>
                     </View>
 
                     <View style={{borderRightColor:'#F8F9FA80', borderRightWidth:1}}/>
                     <View style={{marginLeft:15}}>
-                        <Text style={{...FontStyles.small, color:COLORS.white}}>Available INR</Text>
+                        <Text style={{...FontStyles.small, color:COLORS.white}}>Available NGN</Text>
                         <Text style={{...FontStyles.secondaryText, color:COLORS.white}}>NGN 70,000</Text>
                     </View>
                 </View>

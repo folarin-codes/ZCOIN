@@ -28,7 +28,7 @@ const FontStyles = {
     },
     tertiaryText:{
         color: COLORS.tertiaryText,
-        fontSize:10,
+        fontSize:12,
         fontFamily:'std'
     },
     small:{
