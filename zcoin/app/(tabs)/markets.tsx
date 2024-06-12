@@ -188,7 +188,7 @@ const Markets = ()=>{
                 </View>
                 </View> 
 
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} pagingEnabled bounces={true} style={{marginTop:20 }} >
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} pagingEnabled bounces={true} style={{marginTop:20 , paddingBottom:50}} >
 
                     <View style={{width:width, paddingHorizontal:20}}>
                     <FlatList 
