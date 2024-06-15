@@ -1,13 +1,35 @@
 
 import { SafeAreaView } from "react-native-safe-area-context";
-import {View, Text, Image,TouchableOpacity, ScrollView, FlatList, Platform, Dimensions} from 'react-native';
+import {View, Text, Image,TouchableOpacity, ScrollView, FlatList, Platform, Dimensions, Animated} from 'react-native';
 import styles from "../style";
 import { COLORS } from "@/constants/Colors";
 import FontStyles from "@/constants/sizes";
+import { useRef } from "react";
 
 const Markets = ()=>{
 
     const {height , width} = Dimensions.get('screen')
+
+    const animation = useRef(new Animated.Value(0)).current;
+
+    const handleMovement = (id: number)=>{
+        // const defaultId = 0;
+        let offset = 0
+
+        if(id == 1) {offset = width*.23; scrollRef.current?.scrollTo({x:width, y:0,animated:true})}
+        if (id ==2) {offset = width *.49;scrollRef.current?.scrollTo({x:width*2, y:0,animated:true})}
+        if(id ==3) {offset = width*.8;scrollRef.current?.scrollTo({x:width*3, y:0,animated:true})}
+        if(id ==0){ offset; scrollRef.current?.scrollTo({x:0, y:0,animated:true})}
+
+        Animated.timing(animation, {
+            toValue: offset,
+            duration:100,
+            useNativeDriver:true,
+        }).start()
+    }
+
+    const scrollRef = useRef<ScrollView>(null);
+
 
     const coin_data = [
         {
@@ -54,7 +76,7 @@ const Markets = ()=>{
         {
             id:0,
             name: 'Bitcoin',
-            Symbol: ' BTC',
+            symbol: 'BTC',
             price:"NGN 3,400,00",
             change : '-21.00%',
             image:require('../../assets/images/btc.png')
@@ -170,25 +192,32 @@ const Markets = ()=>{
                     <Text style={{...FontStyles.heading}}>Coins</Text>
                 </View>
 
-                <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-                    <TouchableOpacity>
-                        <Text style={{...FontStyles.secondaryText}}>All</Text>
-                    </TouchableOpacity> 
+                <View style={{alignContent:'center'}}>
+                    <View style={{flexDirection:'row', justifyContent:'space-between'}}>
 
-                    <TouchableOpacity>
-                    <Text style={{...FontStyles.secondaryText}}>Gainer</Text>
+                
+                        <TouchableOpacity onPress={()=> handleMovement(0)}>
+                            <Text style={{...FontStyles.secondaryText}}>All</Text>
                         </TouchableOpacity> 
-                    <TouchableOpacity>
-                        <Text style={{...FontStyles.secondaryText}}>Loser</Text>
-                    </TouchableOpacity> 
-                    <TouchableOpacity>
-                        <Text style={{...FontStyles.secondaryText}}>Favourites</Text>
-                    </TouchableOpacity> 
+
+                        <TouchableOpacity onPress={()=> handleMovement(1)}>
+                        <Text style={{...FontStyles.secondaryText}}>Gainer</Text>
+                            </TouchableOpacity> 
+                        <TouchableOpacity onPress={()=> handleMovement(2)}>
+                            <Text style={{...FontStyles.secondaryText}}>Loser</Text>
+                        </TouchableOpacity> 
+                        <TouchableOpacity onPress={()=> handleMovement(3)}>
+                            <Text style={{...FontStyles.secondaryText}}>Favourites</Text>
+                        </TouchableOpacity> 
+
+                    </View>
+
+                    <Animated.View style={{width:25, backgroundColor:COLORS.primary, height:5, borderRadius:50, transform:[{translateX: animation}],}}/>
                     
                 </View>
                 </View> 
 
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} pagingEnabled bounces={true} style={{marginTop:20 , paddingBottom:50}} >
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} pagingEnabled bounces={true} style={{marginTop:20 , paddingBottom:50}} ref={scrollRef} scrollEnabled={false} >
 
                     <View style={{width:width, paddingHorizontal:20}}>
                     <FlatList 
@@ -280,6 +309,19 @@ const Markets = ()=>{
                   
                     />
 
+                </View>
+
+                <View style={{width:width}}>
+
+                    <View style={{marginTop:60}}>
+                        <Image source={require('../../assets/images/image.png')} style={{alignSelf:'center'}}/>
+
+                        <View style={{alignSelf:'center', marginTop:20 }}>
+                            <Text style={{textAlign:'center', ...FontStyles.heading}}>Special place for favourite coins</Text>
+                            <Text style={{textAlign:'center', ...FontStyles.tertiaryText, marginTop:10}}>Add your favourite coins and check here easily</Text>
+                        </View>
+                    </View>
+                   
                 </View>
 
 
